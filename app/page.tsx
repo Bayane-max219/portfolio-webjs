@@ -4,76 +4,71 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 const stack = [
-  { label: "TypeScript", level: 90 },
-  { label: "React / Next.js 14+", level: 92 },
-  { label: "Node.js", level: 85 },
-  { label: "Tailwind CSS", level: 90 },
-  { label: "Prisma / Drizzle", level: 82 },
-  { label: "tRPC / REST", level: 80 },
-  { label: "Vercel / Edge", level: 85 },
-  { label: "Playwright (tests)", level: 75 },
+  { label: "React / Next.js 14+", level: 90 },
+  { label: "TypeScript / JavaScript", level: 88 },
+  { label: "Java / Spring Boot 3", level: 84 },
+  { label: "Node.js / NestJS", level: 83 },
+  { label: "Angular", level: 78 },
+  { label: "PostgreSQL / MySQL", level: 85 },
+  { label: "Docker / CI-CD", level: 80 },
+  { label: "Tailwind CSS", level: 88 },
 ];
 
-const missions = [
+const projets = [
   {
     num: "01",
-    client: "Linéa Studio",
-    sector: "Agence créative · Paris",
-    period: "Jan. 2026 — Mar. 2026",
-    tech: ["Next.js 14", "tRPC", "Drizzle", "Stripe", "Vercel"],
-    bullets: [
-      "Plateforme e-commerce Next.js 14 (App Router, RSC) : panier Zustand, paiement Stripe, ISR sur 3 800 produits.",
-      "Backend tRPC + Drizzle ORM sur Neon Postgres. Tests Playwright e2e sur les parcours critiques.",
-      "Core Web Vitals : LCP 0,9 s, CLS 0, INP <120 ms. Déploiement Vercel Edge.",
-    ],
+    name: "talanty-mg",
+    desc: "Marketplace de services freelance Madagascar — architecture 3 couches : Spring Boot (API données) + Node.js (logique métier) + Next.js (frontend). PostgreSQL + Docker.",
+    tags: ["Next.js", "Spring Boot", "Node.js", "PostgreSQL", "Docker"],
+    href: "https://github.com/Bayane-max219/talanty-mg",
   },
   {
     num: "02",
-    client: "Poolside Travel",
-    sector: "Voyage premium · Lisbonne",
-    period: "Oct. 2025 — Déc. 2025",
-    tech: ["Next.js", "Sanity", "Mapbox", "Framer Motion"],
-    bullets: [
-      "Moteur de réservation React + Next.js : filtres composables, carte Mapbox, recherche sémantique via embeddings.",
-      "CMS headless (Sanity) avec preview live et édition en place (visual editing).",
-      "Animations Framer Motion respectueuses de prefers-reduced-motion.",
-    ],
+    name: "Gestion_Parking_Spring_Boot_Angular",
+    desc: "Application de gestion de parkings et réservations — Spring Boot 3 + Angular avec authentification JWT et rôles ADMIN / OWNER / CLIENT.",
+    tags: ["Spring Boot 3", "Angular", "JWT", "PostgreSQL", "REST API"],
+    href: "https://github.com/Bayane-max219/Gestion_Parking_Spring_Boot_-_Angular",
   },
   {
     num: "03",
-    client: "Pocket Ledger",
-    sector: "SaaS finance perso · Londres",
-    period: "Juil. 2025 — Sep. 2025",
-    tech: ["Next.js", "Clerk", "Prisma", "D3", "A/B Testing"],
-    bullets: [
-      "App SaaS multi-tenant Next.js + Clerk (auth) + Prisma. Graphiques D3 + Recharts pour reporting.",
-      "Feature flags via Vercel + A/B testing sur onboarding (+18% d'activation).",
-      "Accessibilité AA : navigation clavier complète, contrastes validés, tests axe-core en CI.",
-    ],
+    name: "IT-Project-Management-System",
+    desc: "Système de gestion de projets IT — React, Django REST, PostgreSQL. Dashboard multi-rôles, task management, time tracking et statistiques en temps réel.",
+    tags: ["React", "Django", "PostgreSQL", "REST API", "Multi-role"],
+    href: "https://github.com/Bayane-max219/IT-Project-Management-System",
   },
   {
     num: "04",
-    client: "Tilde Community",
-    sector: "Plateforme communautaire · Berlin",
-    period: "Avr. 2025 — Juin 2025",
-    tech: ["Next.js", "Supabase", "shadcn/ui", "tRPC", "Storybook"],
-    bullets: [
-      "Forum temps réel (Next.js + Supabase Realtime) avec modération IA intégrée.",
-      "Design system Tailwind + shadcn/ui, 42 composants documentés sur Storybook.",
-      "Migration REST → tRPC : ÷3 sur le temps de dev de nouvelles features.",
-    ],
+    name: "campaign-manager-adtech-nest-next",
+    desc: "Mini-plateforme AdTech — API campagnes + simulation ad serving + dashboard stats. NestJS backend + Next.js frontend, TypeScript bout en bout.",
+    tags: ["NestJS", "Next.js", "TypeScript", "REST API", "AdTech"],
+    href: "https://github.com/Bayane-max219/campaign-manager-adtech-nest-next",
+  },
+  {
+    num: "05",
+    name: "Gestion-universitaire-ERP",
+    desc: "Mini-ERP de gestion universitaire — Java EE, JPA, JSF. Gestion des étudiants, cours, inscriptions et notes avec interfaces d'administration complètes.",
+    tags: ["Java EE", "JPA", "JSF", "ERP", "Hibernate"],
+    href: "https://github.com/Bayane-max219/Gestion-universitaire-ERP",
+  },
+  {
+    num: "06",
+    name: "Echeck-in-Event",
+    desc: "Système de gestion d'événements — backend Symfony, app mobile Flutter, invitations QR code et validation check-in temps réel. Projet stage professionnel.",
+    tags: ["Symfony", "Flutter", "QR Code", "REST API", "Stage"],
+    href: "https://github.com/Bayane-max219/Echeck-in-Event",
   },
 ];
 
 const tools = [
-  "Next.js", "TypeScript", "Tailwind", "Prisma",
-  "Drizzle", "Vercel", "Supabase", "Stripe", "Framer Motion",
+  "Next.js", "React", "TypeScript", "Spring Boot", "Angular",
+  "NestJS", "Node.js", "PostgreSQL", "Hibernate", "Docker",
+  "JWT", "Tailwind", "Django", "Flutter",
 ];
 
 const marqueeItems = [
-  "React", "Next.js", "TypeScript", "Tailwind CSS",
-  "tRPC", "Prisma", "Vercel", "Supabase", "Playwright",
-  "Framer Motion", "shadcn/ui", "Storybook",
+  "React", "Next.js", "TypeScript", "Spring Boot", "Angular",
+  "NestJS", "Node.js", "PostgreSQL", "Docker", "JWT",
+  "Java", "Hibernate", "Tailwind CSS", "REST API",
 ];
 
 function SkillRow({ label, level }: { label: string; level: number }) {
@@ -136,7 +131,7 @@ export default function Page() {
             B<span className="text-yellow-vivid">.</span>S
           </span>
           <div className="hidden md:flex items-center gap-10">
-            {["Stack", "Missions", "Contact"].map((s) => (
+            {["Stack", "Projets", "Contact"].map((s) => (
               <a key={s} href={`#${s.toLowerCase()}`} className="nav-link">
                 {s}
               </a>
@@ -162,7 +157,7 @@ export default function Page() {
 
             <h1 className="font-black text-ink leading-none mb-6"
                 style={{ fontSize: "clamp(3rem,9vw,7rem)" }}>
-              Bayane
+              Bayane Miguel
               <br />
               <span className="relative inline-block">
                 Singcol
@@ -175,42 +170,39 @@ export default function Page() {
             <div className="flex flex-col sm:flex-row sm:items-end gap-8 mb-12">
               <div className="flex-1">
                 <h2 className="text-xl md:text-2xl font-bold text-ink-soft mb-4">
-                  Développeur Fullstack JavaScript
+                  Développeur Fullstack — JavaScript & Java
                 </h2>
                 <p className="text-base text-ink-muted max-w-xl leading-relaxed">
-                  Je construis des apps web rapides, accessibles et agréables à
-                  maintenir — React, Next.js, TypeScript. Attention particulière à
-                  la DX, l'accessibilité et les Core Web Vitals.
+                  Je développe des applications web complètes — React / Next.js côté frontend,
+                  Spring Boot / NestJS côté backend. Attention particulière à l'architecture,
+                  la sécurité et la maintenabilité du code.
                 </p>
               </div>
               <div className="flex flex-col gap-3 shrink-0">
                 <a href="#contact" className="btn-primary">
                   Travaillons ensemble
                 </a>
-                <a href="#missions" className="btn-outline text-center">
-                  Voir les missions
+                <a href="#projets" className="btn-outline text-center">
+                  Voir les projets
                 </a>
               </div>
             </div>
           </div>
 
-          {/* PORTRAIT — neo-brutalist : ombre portée jaune */}
+          {/* PORTRAIT */}
           <div className="flex-shrink-0 flex justify-center md:justify-end order-first md:order-last">
             <div className="relative">
-              {/* Ombre portée jaune décalée */}
               <div className="absolute top-3 left-3 w-full h-full bg-yellow-vivid" />
-              {/* Cadre noir */}
               <div className="relative w-48 md:w-56 border-2 border-ink overflow-hidden"
                    style={{ aspectRatio: "3/4" }}>
                 <Image
                   src="/profile.png"
-                  alt="Bayane Singcol"
+                  alt="Bayane Miguel Singcol"
                   fill
                   className="object-cover object-top"
                   priority
                 />
               </div>
-              {/* Badge disponibilité */}
               <div className="absolute -bottom-4 -right-4 bg-yellow-vivid border-2 border-ink px-3 py-1.5 shadow-[2px_2px_0px_#111]">
                 <span className="text-[10px] font-black tracking-widest uppercase text-ink">
                   OPEN TO WORK
@@ -246,8 +238,8 @@ export default function Page() {
               technique
             </h2>
             <p className="text-ink-muted leading-relaxed">
-              TypeScript-first. J'écris du code lisible, testé et performant —
-              de l'API au composant.
+              Full stack JavaScript et Java — du composant React à l'API Spring Boot,
+              en passant par PostgreSQL et Docker.
             </p>
           </div>
           <div>
@@ -268,31 +260,42 @@ export default function Page() {
         </div>
       </section>
 
-      {/* MISSIONS */}
-      <section id="missions" className="py-20 px-6 max-w-6xl mx-auto">
+      {/* PROJETS */}
+      <section id="projets" className="py-20 px-6 max-w-6xl mx-auto">
         <p className="text-xs font-bold tracking-widest uppercase text-yellow-dark mb-2">
-          Expérience
+          Open Source · GitHub
         </p>
-        <h2 className="font-black text-4xl md:text-5xl text-ink mb-12">
-          Missions
+        <h2 className="font-black text-4xl md:text-5xl text-ink mb-4">
+          Projets
         </h2>
+        <p className="text-ink-muted mb-12 max-w-2xl">
+          6 projets full stack JavaScript et Java — code vérifiable sur GitHub.
+        </p>
         <div className="grid md:grid-cols-2 gap-6">
-          {missions.map((m) => (
-            <div key={m.client} className="project-card group">
+          {projets.map((p) => (
+            <a
+              key={p.num}
+              href={p.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-card group block"
+            >
               <div className="flex items-start justify-between mb-4">
                 <span className="text-5xl font-black text-surface-border group-hover:text-yellow-vivid transition-colors duration-200 leading-none">
-                  {m.num}
+                  {p.num}
                 </span>
-                <span className="text-xs font-medium text-ink-faint mt-2">
-                  {m.period}
+                <span className="text-xs font-bold text-ink-muted mt-2 group-hover:text-yellow-dark transition-colors">
+                  GitHub →
                 </span>
               </div>
-              <h3 className="font-bold text-xl text-ink mb-0.5">{m.client}</h3>
-              <p className="text-xs font-medium text-ink-muted mb-4">
-                {m.sector}
+              <h3 className="font-bold text-lg text-ink mb-3 group-hover:text-yellow-dark transition-colors duration-200 break-all">
+                {p.name}
+              </h3>
+              <p className="text-sm text-ink-muted leading-relaxed mb-4">
+                {p.desc}
               </p>
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {m.tech.map((t) => (
+              <div className="flex flex-wrap gap-1.5">
+                {p.tags.map((t) => (
                   <span
                     key={t}
                     className="px-2 py-0.5 text-[10px] font-semibold bg-yellow-soft/60 text-yellow-dark border border-yellow-dark/20"
@@ -301,20 +304,7 @@ export default function Page() {
                   </span>
                 ))}
               </div>
-              <ul className="space-y-2">
-                {m.bullets.map((b, i) => (
-                  <li
-                    key={i}
-                    className="flex gap-2 text-sm text-ink-muted leading-relaxed"
-                  >
-                    <span className="text-yellow-vivid shrink-0 font-bold">
-                      →
-                    </span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </a>
           ))}
         </div>
       </section>
@@ -374,7 +364,7 @@ export default function Page() {
             B<span className="text-yellow-vivid">.</span>S
           </span>
           <span className="text-xs text-ink-faint">
-            Bayane Singcol · Fullstack JavaScript · 2026
+            Bayane Miguel Singcol · Fullstack JavaScript & Java · 2026
           </span>
         </div>
       </footer>
