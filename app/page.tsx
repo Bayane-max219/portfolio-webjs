@@ -38,10 +38,10 @@ const projets = [
   },
   {
     num: "04",
-    name: "campaign-manager-adtech-nest-next",
-    desc: "Mini-plateforme AdTech — API campagnes + simulation ad serving + dashboard stats. NestJS backend + Next.js frontend, TypeScript bout en bout.",
-    tags: ["NestJS", "Next.js", "TypeScript", "REST API", "AdTech"],
-    href: "https://github.com/Bayane-max219/campaign-manager-adtech-nest-next",
+    name: "outage-alerts-mg",
+    desc: "Plateforme de suivi des coupures (eau / électricité) — NestJS + Angular 17 + JWT + rôles + cron + Swagger. Espace public, agent et admin. Conteneurisé Docker.",
+    tags: ["NestJS", "Angular 17", "TypeScript", "JWT", "Docker"],
+    href: "https://github.com/Bayane-max219/outage-alerts-mg",
   },
   {
     num: "05",
@@ -52,17 +52,17 @@ const projets = [
   },
   {
     num: "06",
-    name: "Echeck-in-Event",
-    desc: "Système de gestion d'événements — backend Symfony, app mobile Flutter, invitations QR code et validation check-in temps réel. Projet stage professionnel.",
-    tags: ["Symfony", "Flutter", "QR Code", "REST API", "Stage"],
-    href: "https://github.com/Bayane-max219/Echeck-in-Event",
+    name: "Alerte-Communautaire-Cyclone",
+    desc: "Application d'alerte cyclone et sécurité communautaire — Express + Angular 21 + MySQL + Socket.IO temps réel. Rôles contributeur / modérateur / admin, JWT.",
+    tags: ["Express", "Angular 21", "Socket.IO", "MySQL", "JWT"],
+    href: "https://github.com/Bayane-max219/Alerte_Communautaire_Cyclone_Securite",
   },
 ];
 
 const tools = [
   "Next.js", "React", "TypeScript", "Spring Boot", "Angular",
-  "NestJS", "Node.js", "PostgreSQL", "Hibernate", "Docker",
-  "JWT", "Tailwind", "Django", "Flutter",
+  "NestJS", "Express", "Node.js", "PostgreSQL", "MySQL",
+  "Hibernate", "Docker", "JWT", "Socket.IO",
 ];
 
 const marqueeItems = [
