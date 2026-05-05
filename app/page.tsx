@@ -65,12 +65,35 @@ const projets = [
     tags: ["Express", "Angular 21", "Socket.IO", "MySQL", "JWT"],
     href: "https://github.com/Bayane-max219/Alerte_Communautaire_Cyclone_Securite",
   },
+  {
+    num: "08",
+    name: "PermisKo",
+    desc: "Application de gestion de dossiers de permis de conduire — React + Vite + Tailwind. Kanban drag & drop pour suivi des dossiers par étape, ajout de dossier dynamique.",
+    tags: ["React", "Vite", "Tailwind CSS", "Kanban", "Drag & Drop"],
+    href: "https://github.com/Bayane-max219/permisko",
+    demo: "https://permisko.vercel.app",
+  },
+  {
+    num: "09",
+    name: "SmartERP — Gestion de Stock",
+    desc: "ERP complet de gestion de stock et ventes — Vue.js 3 + Laravel 12 + MySQL + Docker. Dashboard analytics Chart.js, Point de Vente (POS), rapports, multi-utilisateurs, mode hors-ligne localStorage.",
+    tags: ["Vue.js 3", "Laravel 12", "MySQL", "Docker", "Pinia", "Chart.js"],
+    href: "https://github.com/Bayane-max219/Gestion-de-stock",
+  },
+  {
+    num: "10",
+    name: "Église Alliance Évangélique",
+    desc: "Thème WordPress custom sur mesure — Custom Post Types PHP, galerie photos lightbox, événements hebdomadaires, embed YouTube/SoundCloud, interface admin dédiée. Déployé en ligne.",
+    tags: ["WordPress", "PHP", "JavaScript", "jQuery", "MySQL", "CSS3"],
+    href: "https://github.com/Bayane-max219/eglise-alliance-evangelique-wordpress",
+    demo: "https://eglise-alliance-evangelique.infinityfreeapp.com",
+  },
 ];
 
 const tools = [
-  "Next.js", "React", "TypeScript", "Spring Boot", "Angular",
-  "NestJS", "Express", "Node.js", "PostgreSQL", "MySQL",
-  "Hibernate", "Docker", "JWT", "Socket.IO",
+  "Next.js", "React", "Vue.js", "TypeScript", "Spring Boot", "Angular",
+  "NestJS", "Express", "Node.js", "Laravel", "PostgreSQL", "MySQL",
+  "Hibernate", "Docker", "JWT", "Socket.IO", "Stripe", "WordPress",
 ];
 
 const marqueeItems = [
@@ -277,7 +300,7 @@ export default function Page() {
           Projets
         </h2>
         <p className="text-ink-muted mb-12 max-w-2xl">
-          7 projets full stack JavaScript et Java — code vérifiable sur GitHub.
+          10 projets full stack JavaScript et Java — code vérifiable sur GitHub.
         </p>
         <div className="grid md:grid-cols-2 gap-6">
           {projets.map((p) => (
