@@ -6,12 +6,12 @@ import Image from "next/image";
 const stack = [
   { label: "React / Next.js 14+", level: 90 },
   { label: "TypeScript / JavaScript", level: 88 },
-  { label: "Java / Spring Boot 3", level: 84 },
-  { label: "Node.js / NestJS", level: 83 },
-  { label: "Angular", level: 78 },
+  { label: "Node.js / NestJS / Express", level: 86 },
   { label: "PostgreSQL / MySQL", level: 85 },
   { label: "Docker / CI-CD", level: 80 },
   { label: "Tailwind CSS", level: 88 },
+  { label: "Stripe / Intégration API", level: 78 },
+  { label: "Angular / Vue.js", level: 75 },
 ];
 
 const projets = [
@@ -91,15 +91,15 @@ const projets = [
 ];
 
 const tools = [
-  "Next.js", "React", "Vue.js", "TypeScript", "Spring Boot", "Angular",
-  "NestJS", "Express", "Node.js", "Laravel", "PostgreSQL", "MySQL",
-  "Hibernate", "Docker", "JWT", "Socket.IO", "Stripe", "WordPress",
+  "Next.js", "React", "TypeScript", "Node.js", "NestJS", "Express",
+  "Angular", "Vue.js", "PostgreSQL", "MySQL", "Docker", "JWT",
+  "Stripe", "pdf-lib", "Socket.IO", "Tailwind", "Railway", "Vercel",
 ];
 
 const marqueeItems = [
-  "React", "Next.js", "TypeScript", "Spring Boot", "Angular",
-  "NestJS", "Node.js", "PostgreSQL", "Docker", "JWT",
-  "Java", "Hibernate", "Tailwind CSS", "REST API",
+  "React", "Next.js", "TypeScript", "Node.js", "NestJS", "Express",
+  "PostgreSQL", "Docker", "Stripe", "JWT", "Socket.IO", "Tailwind CSS",
+  "Angular", "Vue.js", "REST API", "pdf-lib",
 ];
 
 function SkillRow({ label, level }: { label: string; level: number }) {
@@ -201,12 +201,12 @@ export default function Page() {
             <div className="flex flex-col sm:flex-row sm:items-end gap-8 mb-12">
               <div className="flex-1">
                 <h2 className="text-xl md:text-2xl font-bold text-ink-soft mb-4">
-                  Développeur Fullstack — JavaScript & Java
+                  Développeur Fullstack — React · Node.js · TypeScript
                 </h2>
                 <p className="text-base text-ink-muted max-w-xl leading-relaxed">
                   Je développe des applications web complètes — React / Next.js côté frontend,
-                  Spring Boot / NestJS côté backend. Attention particulière à l'architecture,
-                  la sécurité et la maintenabilité du code.
+                  Node.js / NestJS / Express côté backend. Stripe, génération PDF,
+                  intégration IA (Claude, OpenAI), Docker, déploiement cloud.
                 </p>
               </div>
               <div className="flex flex-col gap-3 shrink-0">
@@ -269,8 +269,8 @@ export default function Page() {
               technique
             </h2>
             <p className="text-ink-muted leading-relaxed">
-              Full stack JavaScript et Java — du composant React à l'API Spring Boot,
-              en passant par PostgreSQL et Docker.
+              Full stack JavaScript et TypeScript — React / Next.js côté frontend,
+              Node.js / NestJS / Express côté backend. PostgreSQL, Docker, Stripe, IA.
             </p>
           </div>
           <div>
