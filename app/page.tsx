@@ -82,11 +82,11 @@ const projets = [
   },
   {
     num: "10",
-    name: "Église Alliance Évangélique",
-    desc: "Thème WordPress custom sur mesure — Custom Post Types PHP, galerie photos lightbox, événements hebdomadaires, embed YouTube/SoundCloud, interface admin dédiée. Déployé en ligne.",
-    tags: ["WordPress", "PHP", "JavaScript", "jQuery", "MySQL", "CSS3"],
-    href: "https://github.com/Bayane-max219/eglise-alliance-evangelique-wordpress",
-    demo: "https://eglise-alliance-evangelique.infinityfreeapp.com",
+    name: "Alliance Fitia Évangélique",
+    desc: "Application web pour une église — React 18 + Node.js/Express + MySQL + JWT. Gestion vidéos, audios, événements. Rôles pasteur / membre. Upload fichiers (Multer), lecture en ligne et téléchargement. Déployé sur Netlify.",
+    tags: ["React 18", "TypeScript", "Node.js", "Express", "MySQL", "JWT", "Vite"],
+    href: "https://github.com/Bayane-max219/Alliance_Fitia_Evangelique",
+    demo: "https://astonishing-melomakarona-2618e3.netlify.app",
   },
 ];
 
