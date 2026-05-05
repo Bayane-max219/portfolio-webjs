@@ -17,41 +17,49 @@ const stack = [
 const projets = [
   {
     num: "01",
+    name: "FormAI",
+    desc: "SaaS de formulaires administratifs français (Succession, Naturalisation, MaPrimeRénov') — wizard 3 étapes, paiement Stripe, génération PDF (pdf-lib) et lettre d'accompagnement IA (Claude 3 Haiku via OpenRouter). Déployé en production.",
+    tags: ["Next.js 14", "NestJS", "PostgreSQL", "Stripe", "OpenRouter AI", "pdf-lib", "Railway"],
+    href: "https://github.com/Bayane-max219/formai",
+    demo: "https://formai-flax.vercel.app",
+  },
+  {
+    num: "02",
     name: "talanty-mg",
     desc: "Marketplace de services freelance Madagascar — architecture 3 couches : Spring Boot (API données) + Node.js (logique métier) + Next.js (frontend). PostgreSQL + Docker.",
     tags: ["Next.js", "Spring Boot", "Node.js", "PostgreSQL", "Docker"],
     href: "https://github.com/Bayane-max219/talanty-mg",
   },
   {
-    num: "02",
+    num: "03",
     name: "Gestion_Parking_Spring_Boot_Angular",
     desc: "Application de gestion de parkings et réservations — Spring Boot 3 + Angular avec authentification JWT et rôles ADMIN / OWNER / CLIENT.",
     tags: ["Spring Boot 3", "Angular", "JWT", "PostgreSQL", "REST API"],
     href: "https://github.com/Bayane-max219/Gestion_Parking_Spring_Boot_-_Angular",
   },
   {
-    num: "03",
+    num: "04",
     name: "IT-Project-Management-System",
     desc: "Système de gestion de projets IT — React, Django REST, PostgreSQL. Dashboard multi-rôles, task management, time tracking et statistiques en temps réel.",
     tags: ["React", "Django", "PostgreSQL", "REST API", "Multi-role"],
     href: "https://github.com/Bayane-max219/IT-Project-Management-System",
   },
   {
-    num: "04",
+    num: "05",
     name: "outage-alerts-mg",
     desc: "Plateforme de suivi des coupures (eau / électricité) — NestJS + Angular 17 + JWT + rôles + cron + Swagger. Espace public, agent et admin. Conteneurisé Docker.",
     tags: ["NestJS", "Angular 17", "TypeScript", "JWT", "Docker"],
     href: "https://github.com/Bayane-max219/outage-alerts-mg",
   },
   {
-    num: "05",
+    num: "06",
     name: "Gestion-universitaire-ERP",
     desc: "Mini-ERP de gestion universitaire — Java EE, JPA, JSF. Gestion des étudiants, cours, inscriptions et notes avec interfaces d'administration complètes.",
     tags: ["Java EE", "JPA", "JSF", "ERP", "Hibernate"],
     href: "https://github.com/Bayane-max219/Gestion-universitaire-ERP",
   },
   {
-    num: "06",
+    num: "07",
     name: "Alerte-Communautaire-Cyclone",
     desc: "Application d'alerte cyclone et sécurité communautaire — Express + Angular 21 + MySQL + Socket.IO temps réel. Rôles contributeur / modérateur / admin, JWT.",
     tags: ["Express", "Angular 21", "Socket.IO", "MySQL", "JWT"],
@@ -269,24 +277,40 @@ export default function Page() {
           Projets
         </h2>
         <p className="text-ink-muted mb-12 max-w-2xl">
-          6 projets full stack JavaScript et Java — code vérifiable sur GitHub.
+          7 projets full stack JavaScript et Java — code vérifiable sur GitHub.
         </p>
         <div className="grid md:grid-cols-2 gap-6">
           {projets.map((p) => (
-            <a
+            <div
               key={p.num}
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
               className="project-card group block"
             >
               <div className="flex items-start justify-between mb-4">
                 <span className="text-5xl font-black text-surface-border group-hover:text-yellow-vivid transition-colors duration-200 leading-none">
                   {p.num}
                 </span>
-                <span className="text-xs font-bold text-ink-muted mt-2 group-hover:text-yellow-dark transition-colors">
-                  GitHub →
-                </span>
+                <div className="flex items-center gap-3 mt-2">
+                  {p.demo && (
+                    <a
+                      href={p.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-xs font-bold text-yellow-dark border border-yellow-dark/40 px-2 py-0.5 hover:bg-yellow-soft/60 transition-colors"
+                    >
+                      Demo →
+                    </a>
+                  )}
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-xs font-bold text-ink-muted hover:text-yellow-dark transition-colors"
+                  >
+                    GitHub →
+                  </a>
+                </div>
               </div>
               <h3 className="font-bold text-lg text-ink mb-3 group-hover:text-yellow-dark transition-colors duration-200 break-all">
                 {p.name}
@@ -304,7 +328,7 @@ export default function Page() {
                   </span>
                 ))}
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </section>
