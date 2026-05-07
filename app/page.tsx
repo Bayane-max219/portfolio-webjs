@@ -307,7 +307,7 @@ export default function Page() {
           Projets
         </h2>
         <p className="text-ink-muted mb-12 max-w-2xl">
-          10 projets full stack JavaScript et Java — code vérifiable sur GitHub.
+          11 projets full stack JavaScript et TypeScript — code vérifiable sur GitHub.
         </p>
         <div className="grid md:grid-cols-2 gap-6">
           {projets.map((p) => (
@@ -418,7 +418,7 @@ export default function Page() {
             B<span className="text-yellow-vivid">.</span>S
           </span>
           <span className="text-xs text-ink-faint">
-            Bayane Miguel Singcol · Fullstack JavaScript & Java · 2026
+            Bayane Miguel Singcol · Fullstack JavaScript & TypeScript · 2026
           </span>
         </div>
       </footer>
