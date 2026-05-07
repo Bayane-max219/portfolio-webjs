@@ -88,18 +88,25 @@ const projets = [
     href: "https://github.com/Bayane-max219/Alliance_Fitia_Evangelique",
     demo: "https://astonishing-melomakarona-2618e3.netlify.app",
   },
+  {
+    num: "11",
+    name: "playwright-ad-capture",
+    desc: "Outil headless de vérification publicitaire — Playwright + TypeScript + Node.js. Détecte automatiquement les emplacements pub sur les sites éditeurs français (GPT, SmartAdServer, Xandr...), intercepte les requêtes ad networks, analyse brand safety et génère 3 rapports automatiques : JSON + HTML visuel + PowerPoint 22 slides.",
+    tags: ["Playwright", "TypeScript", "Node.js", "pptxgenjs", "Headless", "Brand Safety"],
+    href: "https://github.com/Bayane-max219/playwright-ad-capture",
+  },
 ];
 
 const tools = [
   "Next.js", "React", "TypeScript", "Node.js", "NestJS", "Express",
   "Angular", "Vue.js", "PostgreSQL", "MySQL", "Docker", "JWT",
-  "Stripe", "pdf-lib", "Socket.IO", "Tailwind", "Railway", "Vercel",
+  "Stripe", "pdf-lib", "Socket.IO", "Tailwind", "Railway", "Vercel", "Playwright",
 ];
 
 const marqueeItems = [
   "React", "Next.js", "TypeScript", "Node.js", "NestJS", "Express",
   "PostgreSQL", "Docker", "Stripe", "JWT", "Socket.IO", "Tailwind CSS",
-  "Angular", "Vue.js", "REST API", "pdf-lib",
+  "Angular", "Vue.js", "REST API", "pdf-lib", "Playwright",
 ];
 
 function SkillRow({ label, level }: { label: string; level: number }) {
