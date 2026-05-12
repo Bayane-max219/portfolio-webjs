@@ -95,17 +95,25 @@ const projets = [
     tags: ["Playwright", "TypeScript", "Node.js", "pptxgenjs", "Headless", "Brand Safety"],
     href: "https://github.com/Bayane-max219/playwright-ad-capture",
   },
+  {
+    num: "12",
+    name: "TaskFlow",
+    desc: "Gestionnaire de tâches fullstack avec authentification JWT — React 19 + Node.js/Express + MongoDB Atlas. Chaque utilisateur a son propre compte isolé. Tests unitaires Jest (9/9) + tests E2E Cypress + monitoring Sentry. Déployé en production (Vercel + Railway).",
+    tags: ["React 19", "Node.js", "Express", "MongoDB", "JWT", "Jest", "Cypress", "Sentry"],
+    href: "https://github.com/Bayane-max219/taskflow",
+    demo: "https://frontend-dusky-alpha-84.vercel.app",
+  },
 ];
 
 const tools = [
   "Next.js", "React", "TypeScript", "Node.js", "NestJS", "Express",
-  "Angular", "Vue.js", "PostgreSQL", "MySQL", "Docker", "JWT",
+  "Angular", "Vue.js", "PostgreSQL", "MongoDB", "MySQL", "Docker", "JWT",
   "Stripe", "pdf-lib", "Socket.IO", "Tailwind", "Railway", "Vercel", "Playwright",
 ];
 
 const marqueeItems = [
   "React", "Next.js", "TypeScript", "Node.js", "NestJS", "Express",
-  "PostgreSQL", "Docker", "Stripe", "JWT", "Socket.IO", "Tailwind CSS",
+  "PostgreSQL", "MongoDB", "Docker", "Stripe", "JWT", "Socket.IO", "Tailwind CSS",
   "Angular", "Vue.js", "REST API", "pdf-lib", "Playwright",
 ];
 
@@ -307,7 +315,7 @@ export default function Page() {
           Projets
         </h2>
         <p className="text-ink-muted mb-12 max-w-2xl">
-          11 projets full stack JavaScript et TypeScript — code vérifiable sur GitHub.
+          12 projets full stack JavaScript et TypeScript — code vérifiable sur GitHub.
         </p>
         <div className="grid md:grid-cols-2 gap-6">
           {projets.map((p) => (
